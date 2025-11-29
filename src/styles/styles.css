@@ -10,12 +10,13 @@ body {
   color: #333;
   overflow-x: hidden;
 }
+
 #header {
-  background-color: #ffffff;
+  background-color: #fff;
   color: #0e1125;
   padding: 1rem 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: static;
   top: 0;
   z-index: 1;
 }
@@ -23,11 +24,10 @@ body {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem 0 0rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transform: translateX(-8%);
 }
 
 .logo {
@@ -41,20 +41,34 @@ body {
 
 .navbar {
   display: flex;
-  justify-self: center;
   width: 100%;
+  justify-content: center;
 }
 
-.nav-menu {
+.nav-menu,
+.nav-menu2 {
   list-style: none;
   display: flex;
-  gap: 2rem;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
-/* Cards grid: hero card on left + right column with small card + CTA */
+.nav-menu { gap: 2rem; }
+.nav-menu2 { gap: 4rem; }
+
+.nav-menu a,
+.nav-menu2 a {
+  color: #0e1125;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: flex;
+}
+
+.nav-menu a:hover,
+.nav-menu2 a:hover { color: #3498db; }
+
+/* Cards grid */
 #cards-grid {
   max-width: 1200px;
   margin: 2rem auto;
@@ -67,11 +81,11 @@ body {
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
   background: #000;
-  aspect-ratio: 1 / 1; /* quadrado */
-  max-height: 520px; /* evita que fique muito alto em telas grandes */
+  aspect-ratio: 1 / 1;
+  max-height: 520px;
 }
 
 .card-img {
@@ -81,12 +95,25 @@ body {
   display: block;
 }
 
-/* cartão pequeno também em formato quadrado */
-.card-small {
-  aspect-ratio: 1 / 1;
-  width: 150%;
-  max-width: 420px; /* mantém o cartão pequeno com largura controlada */
+.card.card-hero{
+  aspect-ratio: 10/9;
+  transform: translateX(-4%);
 }
+
+.card.card-small {
+  aspect-ratio: 5/3.5;   /* formato retangular horizontal */
+  width: 130%;            /* levemente maior que a coluna */
+  height: 100%;           /* altura automática conforme proporção */
+  max-height: 420px;      /* limite para não ficar exagerado */
+  transform: translateX(-30%);
+}
+
+.card.card-small .card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* imagem cobre todo o retângulo sem distorcer */
+}
+
 
 .overlay {
   position: absolute;
@@ -137,30 +164,40 @@ body {
   margin-top: 0.6rem;
   font-size: 0.9rem;
   opacity: 0.8;
-  transform: translateX(80%);
+  margin-left: auto;
+  text-align: right;
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  align-items: center; /* centraliza horizontalmente os itens na coluna direita */
-  transform: translateX(-30%);
+  gap: 1.5rem;
+  align-items: stretch;
+  justify-content: center;
 }
 
 .cta-box {
   background: linear-gradient(180deg, #0b2a84, #061a60);
   color: #fff;
-  padding: 1.25rem;
-  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.2rem;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   text-align: center;
-  width: 92%;
-  max-width: 420px; /* limita a largura para ficar visualmente centralizado */
+  width: 130%;
+  margin: 0 auto;
+  height: 100%;
+  transform: translateX(-30%);
+}
+
+.cta-box p {
+  font-weight: 700;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
 .btn {
@@ -176,37 +213,16 @@ body {
   transform: translateY(10%);
 }
 
-.nav-menu2 {
-  list-style: none;
-  display: flex;
-  gap: 4rem;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
-
 #nav-container {
   display: flex;
-  transform: translateX(11%);
   width: 100%;
   margin-top: 1.5rem;
 }
 
-.nav-container .navbar {
+#nav-container .navbar {
   width: auto;
-}
-
-.nav-menu a {
-  color: #0e1125;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
   display: flex;
-}
-
-.nav-menu a:hover {
-  color: #3498db;
+  transform: translateX(55%);
 }
 
 .Fundo_Icone {
@@ -226,10 +242,7 @@ figure {
   display: inline-block;
 }
 
-figure img {
-  position: relative;
-  z-index: 2;
-}
+figure img { position: relative; z-index: 2; }
 
 #Icone_Site {
   width: 30px;
@@ -241,23 +254,15 @@ figure img {
 }
 
 .fale_conosco {
-  background-color: #000000;
-  font-family: Inter;
-  color: #ffffff;
+  background-color: #000;
+  font-family: Inter, sans-serif;
+  color: #fff;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 7px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   white-space: nowrap;
-}
-
-.nav-menu2 a {
-  color: #0e1125;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  display: flex;
 }
 
 .conheca-seu-parceiro {
@@ -268,20 +273,7 @@ figure img {
   color: #0e1125;
 }
 
-#recent-info h2 {
-  font-size: 2.6rem;
-  font-weight: 800;
-  margin: 2.5rem 0 1.25rem;
-  text-align: left;
-  color: #0e1125;
-  transform: translateX(4%);
-}
-
-.titulo-chamar-atencao {
-  
-}
-
-/* Recent info section with three cards */
+/* Recent info */
 #recent-info {
   max-width: 1200px;
   margin: 4rem auto;
@@ -294,11 +286,9 @@ figure img {
   margin: 2.5rem 0 1.25rem;
   text-align: left;
   color: #0e1125;
-  transform: translateX(4%);
   display: inline-block;
   width: fit-content;
   padding-bottom: 0.75rem;
-  border-bottom: 3px solid #0e1125;
 }
 
 .conjunto-titulos {
@@ -316,6 +306,11 @@ figure img {
   text-align: left;
 }
 
+.black-bar {
+  border-bottom: 3px solid #0e1125;
+  padding-top: 0.5rem;
+}
+
 .titulo-chamar-atencao h3 {
   margin: 0 0 1rem;
   font-size: 1.15rem;
@@ -331,6 +326,7 @@ figure img {
   color: #0b2a84;
 }
 
+/* Features */
 .features-grid {
   max-width: 1200px;
   margin: 0 auto 4rem;
@@ -341,7 +337,7 @@ figure img {
 }
 
 .features-grid article {
-  background: #f0eefb; /* soft lilac */
+  background: #f0eefb;
   border-radius: 14px;
   padding: 2.25rem;
   display: flex;
@@ -356,7 +352,7 @@ figure img {
   display: flex;
   gap: 1rem;
   align-items: center;
-  flex-direction: column; /* stack image above the text */
+  flex-direction: column;
   text-align: center;
 }
 
@@ -364,24 +360,18 @@ figure img {
   width: 140px;
   height: auto;
   border-radius: 8px;
-  background: #fff; /* give image small white card feel */
+  background: #fff;
   padding: 10px;
   box-shadow: 0 6px 18px rgba(13, 10, 34, 0.06);
-  margin-bottom: 1rem; /* space between image and white card */
+  margin-bottom: 1rem;
 }
 
-.features-grid img.income {
-  display: none; /* keep markup but hide second image used as decorative */
-}
+.features-grid img.income { display: none; }
 
 .feature-card {
-  background: #ffffff;
-  padding: 1.25rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 28px rgba(13, 10, 34, 0.08);
   width: 100%;
-  max-width: 320px; /* center and control width */
-  margin: 0 auto; /* center inside the lilac box */
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .feature-card h3 {
@@ -394,4 +384,80 @@ figure img {
   margin: 0;
   color: #6b6b73;
   font-size: 0.95rem;
+}
+
+/* Register */
+#register h2 {
+  font-family: Inter, sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  margin-top: 4rem;
+  text-align: center;
+  color: #000;
+}
+
+#register p {
+  font-family: Inter, sans-serif;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+#register .form-register {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#register .form-register input[type="email"] {
+  font-family: Inter, sans-serif;
+  display: flex;
+  padding: 16px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  width: 300px;
+}
+
+#register .form-register input[type="email"]::placeholder { color: #888; }
+
+#register .form-register button {
+  font-family: Inter, sans-serif;
+  padding: 12px 20px;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#register .form-register button:hover { background-color: #1e4bb8; }
+
+#carrossel h1{
+  transform: translateY(60%);
+  transform: translateX(5%);
+}
+
+.carrossel-container {
+  display: flex;
+  gap: 2rem; /* espaço entre os cards */
+  justify-content: center; /* centraliza os cards */
+  flex-wrap: wrap; /* permite quebra de linha se necessário */
+  padding: 2rem 0; /* espaço acima e abaixo */
+}
+
+.carrossel-card {
+  background-color: #5c5959;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
