@@ -1,180 +1,280 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página Inicial - Blog Cecília Digital</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
     <header id="header">
-        <div class="header-container">
-            <figure>
-                <div class="Fundo_Icone">
-                    <img src="../public/images/Icone_Cecilia_Digital.png" alt="Icone cecilia digital" id="Icone_Site">
-                </div>
-            </figure>
-            <h1 class="logo">Cecília Digital</h1>
-            <nav class="navbar">
-                <ul class="nav-menu">
-                    <li><a href="#home">Pagina inicial</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                </ul>
-            </nav>
-            <div class="fale_conosco">
-                Fale Conosco →
-            </div>
-        </div>
-    </header>
-    
-    <div id="nav-container">
+      <div class="header-container">
+        <figure>
+          <div class="Fundo_Icone">
+            <img
+              src="../public/images/Icone_Cecilia_Digital.png"
+              alt="Icone cecilia digital"
+              id="Icone_Site"
+            />
+          </div>
+        </figure>
+        <h1 class="logo">Cecília Digital</h1>
         <nav class="navbar">
-            <ul class="nav-menu2">
-                <li><a href="#Blog">Blog</a></li>
-                <li><a href="#migracao">Migração</a></li>
-                <li><a href="#integracao">Integração</a></li>
-                <li><a href="#mais-recentes">Mais recentes</a></li>
-                <li><a href="#mais">Mais</a></li>
-            </ul>
+          <ul class="nav-menu">
+            <li><a href="#home">Pagina inicial</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
         </nav>
+        <div class="fale_conosco">Fale Conosco →</div>
+      </div>
+    </header>
+
+    <div id="nav-container">
+      <nav class="navbar">
+        <ul class="nav-menu2">
+          <li><a href="#Blog">Blog</a></li>
+          <li><a href="./pages/migracao_web.html">Migração</a></li>
+          <li><a href="./pages/conteudo_web.html">Integração</a></li>
+          <li><a href="#mais-recentes">Mais recentes</a></li>
+          <li><a href="#mais">Mais</a></li>
+        </ul>
+      </nav>
     </div>
 
     <!-- Cards section: hero card left + right column -->
     <section id="cards-grid">
-        <article class="card card-hero">
-            <img src="../public/images/Migração de sistema.png" alt="Migração de sistema" class="card-img">
-            <div class="overlay">
-                <span class="kicker">Migração de Sistema</span>
-                <h2 class="card-title">Migração de sistema</h2>
-                <p class="card-excerpt">Instantly know your cash position across all accounts.</p>
-                <h4 class="card-author">De Cecilia Digital</h4>
-            </div>
+      <article class="card card-hero">
+        <img
+          src="../public/images/Migração de sistema.png"
+          alt="Migração de sistema"
+          class="card-img"
+        />
+        <div class="overlay">
+          <span class="kicker">Migração de Sistema</span>
+          <h2 class="card-title">Migração de sistema</h2>
+          <p class="card-excerpt">
+            Instantly know your cash position across all accounts.
+          </p>
+          <h4 class="card-author">De Cecilia Digital</h4>
+        </div>
+      </article>
+
+      <div class="right-column">
+        <article class="card card-small">
+          <img
+            src="../public/images/Integração de sistema.png"
+            alt="Integração de sistema"
+            class="card-img"
+          />
+          <div class="overlay small">
+            <span class="kicker">Integração de Sistema</span>
+            <h3 class="card-title">Integração de sistema</h3>
+          </div>
         </article>
 
-        <div class="right-column">
-            <article class="card card-small">
-                <img src="../public/images/Integração de sistema.png" alt="Integração de sistema" class="card-img">
-                <div class="overlay small">
-                    <span class="kicker">Integração de Sistema</span>
-                    <h3 class="card-title">Integração de sistema</h3>
-                </div>
-            </article>
-
-            <aside class="cta-box">
-                <p>Faça agora uma avaliação do seu e‑commerce, gratuita!</p>
-                <a href="#contato" class="btn">Fale Conosco →</a>
-            </aside>
-        </div>
+        <aside class="cta-box">
+          <p>Faça agora uma avaliação do seu e‑commerce, gratuita!</p>
+          <a href="#contato" class="btn">Fale Conosco →</a>
+        </aside>
+      </div>
     </section>
 
+    <!-- Conheça seu parceiro -->
     <section id="features-section">
-        <h2 class="conheca-seu-parceiro">Conheça seu parceiro</h2>
+  <h2 class="conheca-seu-parceiro">Conheça seu parceiro</h2>
 
-        <section class="features-grid">
-            <!-- Card 1 -->
-            <article class="feature gateway">
-                <div class="feature-box">
-                    <img class="fitness" src="../public/images/fitness first.png" alt="">
-                    <img class="income" src="../public/images/income.png" alt="">
-                </div>
-                <div class="feature-description">
-                    <h3>Gateway de Pagamento</h3>
-                    <p>Instantly know your cash position across all accounts,</p>
-                </div>
-            </article>
+  <section class="features-grid">
+    <!-- Card 1: Gateway de Pagamento -->
+    <article class="feature gateway">
+      <div class="feature-box">
+        <img src="../public/images/fitness first.png" alt="Transação Fitness First" />
+        <img src="../public/images/income.png" alt="Entrada de receita" />
+      </div>
+      <div class="feature-description">
+        <h3>Gateway de Pagamento</h3>
+        <p>Instantly know your cash position across all accounts.</p>
+      </div>
+    </article>
 
-            <!-- Card 2 -->
-            <article class="feature e-commerce">
-                <div class="feature-box">
-                    <img class="fitness" src="../public/images/fitness first.png" alt="">
-                    <img class="income" src="../public/images/income.png" alt="">
-                </div>
-                <div class="feature-description">
-                    <h3>E-commerce Automatizado</h3>
-                    <p>Drill down to the transaction level, with every detail at fingertips.</p>
-                </div>
-            </article>
+    <!-- Card 2: E-commerce Automatizado -->
+    <article class="feature e-commerce">
+      <div class="feature-box feature-box--three">
+        <img src="../public/images/cd2a10874132b31fd3ed6d9b87d06aa5305fa41e (3).png" alt="Potato Corner" />
+      </div>
+      <div class="feature-description">
+        <h3>E-commerce Automatizado</h3>
+        <p>Drill down to the transaction level, with every detail at fingertips.</p>
+      </div>
+    </article>
 
-            <!-- Card 3 -->
-            <article class="feature regras">
-                <div class="feature-box">
-                    <img class="fitness" src="../public/images/fitness first.png" alt="">
-                    <img class="income" src="../public/images/income.png" alt="">
-                </div>
-                <div class="feature-description">
-                    <h3>Regras Personalizadas</h3>
-                    <p>Automatically put your idle cash to work and make the most of every dollar.</p>
-                </div>
-            </article>
-        </section>
+    <!-- Card 3: Regras Personalizadas -->
+    <article class="feature regras">
+      <div class="feature-box">
+        <img src="../public/images/cd2a10874132b31fd3ed6d9b87d06aa5305fa41e (1).png" alt="Spending Plan gráfico" />
+      </div>
+      <div class="feature-description">
+        <h3>Regras Personalizadas</h3>
+        <p>Automatically put your idle cash to work and make the most of every dollar.</p>
+      </div>
+    </article>
+  </section>
+</section>
+
     </section>
 
     <section id="recent-info">
-        <h2>Mais Recentes →</h2>
-        <div class="conjunto-titulos">
-            <div class="titulo-chamar-atencao">
-                <div class="black-bar"></div>
-                <h3>Titulo que vai chamar atenção <br> das pessoas</h3>
-                <h4>25 de novembro de 2025</h4>
-            </div>
-
-            <div class="titulo-chamar-atencao">
-                <div class="black-bar"></div>
-                <h3>Titulo que vai chamar atenção <br> das pessoas</h3>
-                <h4>25 de novembro de 2025</h4>
-            </div>
-
-            <div class="titulo-chamar-atencao">
-                <div class="black-bar"></div>
-                <h3>Titulo que vai chamar atenção <br> das pessoas</h3>
-                <h4>25 de novembro de 2025</h4>
-            </div>
+      <h2>Mais Recentes →</h2>
+      <div class="conjunto-titulos">
+        <div class="titulo-chamar-atencao">
+          <div class="black-bar"></div>
+          <h3>
+            Titulo que vai chamar atenção <br />
+            das pessoas
+          </h3>
+          <h4>25 de novembro de 2025</h4>
         </div>
+
+        <div class="titulo-chamar-atencao">
+          <div class="black-bar"></div>
+          <h3>
+            Titulo que vai chamar atenção <br />
+            das pessoas
+          </h3>
+          <h4>25 de novembro de 2025</h4>
+        </div>
+
+        <div class="titulo-chamar-atencao">
+          <div class="black-bar"></div>
+          <h3>
+            Titulo que vai chamar atenção <br />
+            das pessoas
+          </h3>
+          <h4>25 de novembro de 2025</h4>
+        </div>
+      </div>
     </section>
 
     <section id="register">
-        <h2>Fique por dentro de tudo</h2>
-        <p>Se registre e tenha acesso a diversos conteudos para agregar no seu e-commerce</p>
-        <form action="email">
-            <div class="form-register">
-                <input type="email" placeholder="Digite seu e-mail">
-                <button type="submit">Registrar</button>
-            </div>
-        </form>
+      <h2>Fique por dentro de tudo</h2>
+      <p>
+        Se registre e tenha acesso a diversos conteudos para agregar no seu
+        e-commerce
+      </p>
+      <form action="email">
+        <div class="form-register">
+          <input type="email" placeholder="Digite seu e-mail" />
+          <button type="submit">Registrar</button>
+        </div>
+      </form>
     </section>
 
     <section id="carrossel">
+      <h1>Dicas para e-commerce →</h1>
 
-        <h1>Dicas para e-commerce →</h1>
-        
+      <div class="carrossel-container">
         <div class="carrossel-card">
-            <div class="carrossel-img">
-                <img src="../public/images/abstract-shape.png" alt="">
-            </div>
-            <div class="carrossel-description">
-                <p>Migração de Sistema</p>
-                <h3>Bill & payments</h3>
-                <p>Instantly know your cash position across all accounts,</p>
-            </div>
+          <div class="carrossel-img">
+            <img src="../public/images/abstract-shape.png" alt="" />
+          </div>
+          <div class="carrossel-description">
+            <p>Migração de Sistema</p>
+            <h3>Bill & payments</h3>
+            <p>Instantly know your cash position across all accounts,</p>
+          </div>
         </div>
 
         <div class="carrossel-card">
-            <div class="carrossel-img"></div>
-            <div class="carrossel-description">
-                <p>Migração de Sistema</p>
-                <h3>Bill & payments</h3>
-                <p>Instantly know your cash position across all accounts,</p>
-            </div>
+          <div class="carrossel-img">
+            <img
+              class="carrossel-img2"
+              src="../public/images/Abstract Background.jpg"
+              alt=""
+            />
+          </div>
+          <div class="carrossel-description">
+            <p>Migração de Sistema</p>
+            <h3>Bill & payments</h3>
+            <p>Instantly know your cash position across all accounts,</p>
+          </div>
         </div>
 
         <div class="carrossel-card">
-            <div class="carrossel-img"></div>
-            <div class="carrossel-description">
-                <p>Migração de Sistema</p>
-                <h3>Bill & payments</h3>
-                <p>Instantly know your cash position across all accounts,</p>
-            </div>
+          <div class="carrossel-img">
+            <img
+              class="carrossel-img3"
+              src="../public/images/scrap color.jpg"
+              alt=""
+            />
+          </div>
+          <div class="carrossel-description">
+            <p>Migração de Sistema</p>
+            <h3>Bill & payments</h3>
+            <p>Instantly know your cash position across all accounts,</p>
+          </div>
         </div>
+      </div>
     </section>
-</body>
+
+    <section id="carrossel2">
+      <h1>Dicas para e-commerce →</h1>
+
+      <div class="carrossel-container2">
+        <div class="carrossel-card2">
+          <div class="carrossel-img4">
+            <img src="../public/images/quadros.jpg" alt="" />
+          </div>
+          <div class="carrossel-description2">
+            <p>Migração de Sistema</p>
+            <h3>Bill & payments</h3>
+            <p>Instantly know your cash position across all accounts,</p>
+          </div>
+        </div>
+
+        <div class="carrossel-card2">
+          <div class="carrossel-img">
+            <img
+              class="carrossel-img5"
+              src="../public/images/alianca.jpg"
+              alt=""
+            />
+          </div>
+          <div class="carrossel-description2">
+            <p>Migração de Sistema</p>
+            <h3>Bill & payments</h3>
+            <p>Instantly know your cash position across all accounts,</p>
+          </div>
+        </div>
+
+        <div class="carrossel-card2">
+          <div class="carrossel-img2">
+            <img
+              class="carrossel-img6"
+              src="../public/images/cafe.jpg"
+              alt=""
+            />
+          </div>
+          <div class="carrossel-description2">
+            <p>Migração de Sistema</p>
+            <h3>Bill & payments</h3>
+            <p>Instantly know your cash position across all accounts,</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h1>
+        Conheça todos os nossos <br />
+        serviços e produtos!
+      </h1>
+      <button class="contact-button">contato</button>
+    </section>
+
+    <footer id="footer">
+      <hr />
+      <p>Todos os direitos reservados</p>
+    </footer>
+
+    <a href="./pages/migracao_web.html"> proxima pagina</a>
+  </body>
 </html>
