@@ -22,12 +22,23 @@
         <nav class="navbar">
           <ul class="nav-menu">
             <li><a href="#home">Pagina inicial</a></li>
-            <li><a href="#blog">Blog</a></li>
+            <li>
+              <a href="#blog">Blog</a>
+            </li>
           </ul>
         </nav>
         <div class="fale_conosco">Fale Conosco →</div>
       </div>
     </header>
+
+    <!-- Menu visual para celular -->
+<div class="menu-mobile">
+  <div class="menu-blog">
+    Blog <span class="seta">▼</span>
+  </div>
+  <div class="menu-subitem">Mais recentes</div>
+</div>
+
 
     <div id="nav-container">
       <nav class="navbar">
@@ -36,12 +47,26 @@
           <li><a href="./pages/migracao_web.html">Migração</a></li>
           <li><a href="./pages/conteudo_web.html">Integração</a></li>
           <li><a href="#mais-recentes">Mais recentes</a></li>
-          <li><a href="#mais">Mais</a></li>
+          <li>
+          <li >
+            <a href="#mais" id="abrir-gaveta">Mais</a>
+            <!-- Gaveta suspensa abaixo de "Mais" -->
+            
+            <div id="gaveta" class="gaveta-vertical">
+              <ul>
+                <li><a href="#">Split de Pagamento</a></li>
+                <li><a href="#">Pagamento Super Flexível</a></li>
+                <li><a href="#">Sincronização Automática</a></li>
+                <li><a href="#">Controle de estoque por região</a></li>
+                <li><a href="#">E-commerce Process Automatic</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
 
-    <!-- Cards section: hero card left + right column -->
+
     <section id="cards-grid">
       <article class="card card-hero">
         <img
@@ -68,7 +93,10 @@
           />
           <div class="overlay small">
             <span class="kicker">Integração de Sistema</span>
-            <h3 class="card-title">Integração de sistema</h3>
+            <h2 class="card-title">Integração de sistema</h3>
+            <p class="card-excerpt">
+            Instantly know your cash position across all accounts.
+          </p>
           </div>
         </article>
 
@@ -87,8 +115,8 @@
     <!-- Card 1: Gateway de Pagamento -->
     <article class="feature gateway">
       <div class="feature-box">
-        <img src="../public/images/fitness first.png" alt="Transação Fitness First" />
-        <img src="../public/images/income.png" alt="Entrada de receita" />
+        <img class="ftr-box-img1" src="../public/images/fitness first.png" alt="Transação Fitness First" />
+        <img class="ftr-box-img2" src="../public/images/income.png" alt="Entrada de receita" />
       </div>
       <div class="feature-description">
         <h3>Gateway de Pagamento</h3>
@@ -99,7 +127,7 @@
     <!-- Card 2: E-commerce Automatizado -->
     <article class="feature e-commerce">
       <div class="feature-box feature-box--three">
-        <img src="../public/images/cd2a10874132b31fd3ed6d9b87d06aa5305fa41e (3).png" alt="Potato Corner" />
+        <img class="ftr-box-img3" src="../public/images/cd2a10874132b31fd3ed6d9b87d06aa5305fa41e (3).png" alt="Potato Corner" />
       </div>
       <div class="feature-description">
         <h3>E-commerce Automatizado</h3>
@@ -216,7 +244,7 @@
     </section>
 
     <section id="carrossel2">
-      <h1>Dicas para e-commerce →</h1>
+      <h1>Migração I Integração →</h1>
 
       <div class="carrossel-container2">
         <div class="carrossel-card2">
@@ -274,7 +302,24 @@
       <hr />
       <p>Todos os direitos reservados</p>
     </footer>
-
-    <a href="./pages/migracao_web.html"> proxima pagina</a>
   </body>
+
+
+  <script>
+  const botaoMais = document.getElementById('abrir-gaveta');
+  const gaveta = document.getElementById('gaveta');
+
+  botaoMais.addEventListener('click', function (e) {
+    e.preventDefault();
+    gaveta.style.display = gaveta.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Fecha a gaveta se clicar fora
+  document.addEventListener('click', function (e) {
+    if (!gaveta.contains(e.target) && e.target !== botaoMais) {
+      gaveta.style.display = 'none';
+    }
+  });
+</script>
+
 </html>

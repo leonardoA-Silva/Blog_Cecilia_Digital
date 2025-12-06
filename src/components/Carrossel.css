@@ -1,0 +1,47 @@
+/* Estrutura base (ajuste conforme seu tema) */
+#carrossel {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.carrossel-container {
+  display: flex;
+  gap: 2rem;
+  /* A animação pode vir do JS, mas definimos aqui por clareza */
+  animation: scroll 20s linear infinite;
+  will-change: transform;
+}
+
+.carrossel-card {
+  background: #0e1125;
+  color: #fff;
+  border-radius: 1rem;
+  min-width: 280px;    /* importante: não deixar encolher */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.carrossel-img {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+.carrossel-img img {
+  position: absolute;
+  inset: 0;
+  width: 140%;
+  height: 140%;
+  object-fit: cover;
+  transform: translate(-20%, -10%);
+}
+
+/* A animação: anda metade da largura após duplicar os itens */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
