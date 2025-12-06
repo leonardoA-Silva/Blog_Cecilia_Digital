@@ -1023,43 +1023,77 @@ figure img {
   display: none;
 }
 
+/* O pai precisa ser relativo para a gaveta posicionar abaixo do botão */
+.nav-menu2 li {
+  position: relative;
+  overflow: visible; /* garante que não corte a gaveta */
+}
+
+/* Gaveta */
 .gaveta-vertical {
   display: none;
   position: absolute;
-  top: 100%; /* aparece abaixo do botão */
+  top: 100%;
   left: 0;
   background-color: #0e1125;
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   border-radius: 0.75rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
   z-index: 9999;
-  min-width: 14rem;
+  min-width: 28rem;         /* mais larga para duas colunas */
+  max-width: 36rem;         /* limite opcional */
+  max-height: 18rem;        /* evita ficar enorme */
+  overflow: none;           /* rolagem caso passe da altura */
 }
 
-.gaveta-vertical ul {
+/* Grid interno da gaveta */
+.gaveta-grid {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-rows: minmax(2rem, auto);
+  row-gap: 0.5rem;
 }
 
-.gaveta-vertical li {
-  margin-bottom: 0.5rem;
+/* Cada linha com duas colunas */
+.gaveta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* duas colunas iguais */
+  column-gap: 1rem;
+  align-items: start;
 }
 
-.gaveta-vertical a {
+/* Texto das colunas */
+.col-esq, .col-dir {
+  display: block;
+  white-space: normal;       /* permite quebrar linhas para não truncar */
+  word-wrap: break-word;     /* quebra palavras longas */
   color: #fff;
-  text-decoration: none;
   font-weight: 500;
 }
 
-.gaveta-vertical a:hover {
+/* Hover só na linha (opcional) */
+.gaveta-row:hover .col-esq,
+.gaveta-row:hover .col-dir {
   text-decoration: underline;
 }
 
-.nav-menu2 li {
+/* Imagens em camadas inferiores para não sobrepor */
+#cards-grid .card-img {
   position: relative;
+  z-index: 1;
 }
+#cards-grid .overlay {
+  z-index: 2;
+}
+
+/* Evita que containers do nav cortem a gaveta */
+#nav-container, .navbar, .header-container {
+  overflow: visible;
+}
+
 
 
 

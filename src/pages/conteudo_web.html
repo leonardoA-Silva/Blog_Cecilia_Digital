@@ -42,7 +42,34 @@
           <li><a href="./migracao_web.html">Migração</a></li>
           <li><a href="./conteudo_web.html">Integração</a></li>
           <li><a href="#mais-recentes">Mais recentes</a></li>
-          <li><a href="#mais">Mais</a></li>
+          <li>
+            <a href="#mais" id="abrir-gaveta">Mais</a>
+
+            <div id="gaveta" class="gaveta-vertical">
+              <ul class="gaveta-grid">
+                <li class="gaveta-row">
+                  <span class="col-esq">Split de Pagamento</span>
+                  <span class="col-dir">Pagamento Super Flexível</span>
+                </li>
+                <li class="gaveta-row">
+                  <span class="col-esq">Split de Gateway</span>
+                  <span class="col-dir">Sincronização Automática</span>
+                </li>
+                <li class="gaveta-row">
+                  <span class="col-esq">Split Multi-Regional</span>
+                  <span class="col-dir">Regra de negócio personalizadas</span>
+                </li>
+                <li class="gaveta-row">
+                  <span class="col-esq">Split Geográfico</span>
+                  <span class="col-dir">Controle de estoque por região</span>
+                </li>
+                <li class="gaveta-row">
+                  <span class="col-esq">E-commerce</span>
+                  <span class="col-dir">Process Automatic</span>
+                </li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
@@ -155,4 +182,22 @@
       <p>Todos os direitos reservados</p>
     </footer>
   </body>
+
+  <script>
+    const botaoMais = document.getElementById("abrir-gaveta");
+    const gaveta = document.getElementById("gaveta");
+
+    botaoMais.addEventListener("click", function (e) {
+      e.preventDefault();
+      gaveta.style.display =
+        gaveta.style.display === "block" ? "none" : "block";
+    });
+
+    // Fecha a gaveta se clicar fora
+    document.addEventListener("click", function (e) {
+      if (!gaveta.contains(e.target) && e.target !== botaoMais) {
+        gaveta.style.display = "none";
+      }
+    });
+  </script>
 </html>
