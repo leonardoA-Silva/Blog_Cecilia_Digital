@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
 * {
   margin: 0;
@@ -8,7 +7,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
@@ -127,7 +126,7 @@ figure img {
 
 .fale_conosco {
   background-color: #000;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #fff;
   padding: 0.5rem 1rem;
   border: none;
@@ -331,17 +330,17 @@ figure img {
   box-shadow: 0 0.375rem 1.125rem rgba(13, 10, 34, 0.08);
 }
 
-.ftr-box-img1{
+.ftr-box-img1 {
   transform: translate(50%);
   width: 100px;
 }
 
-.ftr-box-img2{
+.ftr-box-img2 {
   transform: translate(-30%);
   width: 100px;
 }
 
-.ftr-box-img3{
+.ftr-box-img3 {
   transform: translateY(-40%);
   display: flex;
   height: 20rem;
@@ -382,7 +381,7 @@ figure img {
 }
 
 #recent-info h2 {
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   font-weight: 800;
   margin: 2.5rem 0 1.25rem;
   text-align: left;
@@ -429,8 +428,8 @@ figure img {
 
 /* ===== Register ===== */
 #register h2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 4rem;
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
   font-weight: 900;
   margin-top: 4rem;
   text-align: center;
@@ -438,8 +437,8 @@ figure img {
 }
 
 #register p {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
   margin-top: 1rem;
   text-align: center;
   color: #333;
@@ -453,7 +452,7 @@ figure img {
 }
 
 #register .form-register input[type="email"] {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   display: flex;
   padding: 1rem 1.25rem; /* 16px 20px */
   font-size: 1rem; /* 16px */
@@ -468,8 +467,8 @@ figure img {
 }
 
 #register .form-register button {
-  font-family: 'Inter', sans-serif;
-  padding: 0.75rem 1.25rem; /* 12px 20px */
+  font-family: "Inter", sans-serif;
+  padding: 0.75rem 1.5rem; /* 12px 20px */
   background-color: #2563eb;
   color: #fff;
   border: none;
@@ -494,6 +493,20 @@ figure img {
   align-items: center;
 }
 
+.carrossel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.carrossel-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
 #carrossel h1 {
   font-size: 2rem;
   font-weight: 800;
@@ -505,9 +518,11 @@ figure img {
 .carrossel-container {
   display: flex;
   gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
   width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 .carrossel-card {
@@ -672,7 +687,7 @@ figure img {
   color: #000;
   text-align: center;
   padding: 1.5rem 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.95rem;
 }
 
@@ -688,70 +703,6 @@ figure img {
 }
 
 /* ===== Responsividade ===== */
-@media (max-width: 64rem) {
-  /* 1024px */
-  #cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card.card-hero {
-    transform: none;
-  }
-
-  .right-column .card.card-small,
-  .cta-box {
-    width: 100%;
-    transform: none;
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .carrossel-card,
-  .carrossel-card2 {
-    width: 45%;
-  }
-
-  #nav-container .navbar {
-    transform: none;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 40rem) {
-  /* 640px */
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-box img {
-    width: 5rem; /* 80px */
-    height: 5rem; /* 80px */
-  }
-
-  .feature-description h3 {
-    font-size: 1.1rem;
-  }
-
-  .feature-description p {
-    font-size: 0.9rem;
-  }
-
-  .carrossel-card,
-  .carrossel-card2 {
-    width: 100%;
-  }
-
-  #carrossel h1,
-  #carrossel2 h1 {
-    font-size: 1.6rem;
-  }
-
-  #contact h1 {
-    font-size: 1.6rem;
-  }
-}
 
 /* pagina migracao web */
 
@@ -1003,7 +954,7 @@ figure img {
   display: block;
 }
 .fw-img h2 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   position: relative;
   bottom: 1.25rem; /* 20px */
   left: 50%;
@@ -1039,12 +990,12 @@ figure img {
   color: #fff;
   padding: 1rem 1.25rem;
   border-radius: 0.75rem;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   z-index: 9999;
-  min-width: 28rem;         /* mais larga para duas colunas */
-  max-width: 36rem;         /* limite opcional */
-  max-height: 18rem;        /* evita ficar enorme */
-  overflow: none;           /* rolagem caso passe da altura */
+  min-width: 28rem; /* mais larga para duas colunas */
+  max-width: 36rem; /* limite opcional */
+  max-height: 18rem; /* evita ficar enorme */
+  overflow: none; /* rolagem caso passe da altura */
 }
 
 /* Grid interno da gaveta */
@@ -1066,10 +1017,11 @@ figure img {
 }
 
 /* Texto das colunas */
-.col-esq, .col-dir {
+.col-esq,
+.col-dir {
   display: block;
-  white-space: normal;       /* permite quebrar linhas para não truncar */
-  word-wrap: break-word;     /* quebra palavras longas */
+  white-space: normal; /* permite quebrar linhas para não truncar */
+  word-wrap: break-word; /* quebra palavras longas */
   color: #fff;
   font-weight: 500;
 }
@@ -1090,12 +1042,108 @@ figure img {
 }
 
 /* Evita que containers do nav cortem a gaveta */
-#nav-container, .navbar, .header-container {
+#nav-container,
+.navbar,
+.header-container {
   overflow: visible;
 }
 
+.seta {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
 
+.carrossel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
 
+.carrossel-container,
+.carrossel-container2 {
+  display: flex;
+  flex-wrap: nowrap; /* 🔥 ESSENCIAL: impede quebra de linha */
+  transition: transform 0.3s ease;
+}
+
+.carrossel-card,
+.carrossel-card2 {
+  flex: 0 0 auto;
+  width: 300px; /* ou o valor que você usa */
+  margin-right: 20px; /* espaçamento entre cards */
+}
+
+.carrossel-container {
+  min-width: calc(300px * 6); /* 6 cards de 300px */
+}
+
+@media (max-width: 64rem) {
+  /* 1024px */
+  #cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card.card-hero {
+    transform: none;
+  }
+
+  .right-column .card.card-small,
+  .cta-box {
+    width: 100%;
+    transform: none;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carrossel-card,
+  .carrossel-card2 {
+    width: 45%;
+  }
+
+  #nav-container .navbar {
+    transform: none;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 40rem) {
+  /* 640px */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-box img {
+    width: 5rem; /* 80px */
+    height: 5rem; /* 80px */
+  }
+
+  .feature-description h3 {
+    font-size: 1.1rem;
+  }
+
+  .feature-description p {
+    font-size: 0.9rem;
+  }
+
+  .carrossel-card,
+  .carrossel-card2 {
+    width: 100%;
+  }
+
+  #carrossel h1,
+  #carrossel2 h1 {
+    font-size: 1.6rem;
+  }
+
+  #contact h1 {
+    font-size: 1.6rem;
+  }
+}
 
 /* ============================
        Estilos para celular
@@ -1123,11 +1171,9 @@ figure img {
     transform: translate(20%);
   }
 
-  .Fundo_Icone{
+  .Fundo_Icone {
     transform: translate(90%, -40%);
   }
-
-  
 
   .navbar .nav-menu2 {
     display: none; /* esconde menu horizontal */
@@ -1250,6 +1296,7 @@ figure img {
     font-size: 1rem;
     padding: 0.75rem 1rem;
     text-align: center;
+    transform: translateY(30%);
   }
 
   /* CARROSSEL */
@@ -1403,20 +1450,20 @@ figure img {
   }
 
   .menu-mobile {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: start;
-  margin-top: 0.5rem;
-  transform: translate(15%);
-}
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: start;
+    margin-top: 0.5rem;
+    transform: translate(15%);
+  }
 
   .card.card-small {
     display: none;
   }
 
-  #contact{
+  #contact {
     width: 100vw;
     transform: translate(-3.4%);
   }
@@ -1431,43 +1478,61 @@ figure img {
     display: none;
   }
 
-  #migracao{
-    font-family: 'Inter', sans-serif;
+  #migracao {
+    font-family: "Inter", sans-serif;
   }
 
-  #migracao h1{
+  #migracao h1 {
     font-size: 40px;
     transform: translate(-2.5%);
   }
 
-  #migracao p{
+  #migracao p {
     font-size: 20px;
     transform: translate(-2.5%);
-
   }
 
   .beneficios-list,
   .migracao-text h3,
-  .mts-empresas{
+  .mts-empresas {
     display: none;
   }
 
-  #full-width-img{
+  #full-width-img {
     width: 100vw;
     transform: translate(-3.35%);
     text-align: center;
   }
 
-  #full-width-img img{
+  #full-width-img img {
     object-fit: cover;
     height: 400px;
   }
 
-  .conheca-seu-parceiro{
-    transform: translateY(-20%)
+  .conheca-seu-parceiro {
+    transform: translateY(-20%);
+  }
+
+  .carrossel-wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carrossel-container,
+  .carrossel-container2 {
+    display: flex;
+    flex-wrap: nowrap; /* 🔥 impede quebra de linha */
+    transition: transform 0.4s ease;
+  }
+
+  .carrossel-card,
+  .carrossel-card2 {
+    flex: 0 0 auto;
+    width: 80vw; /* ocupa 80% da tela no celular */
+    max-width: 300px;
+    margin-right: 20px;
   }
 }
-
 
 /* PAGINA 2 */
 
