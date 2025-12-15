@@ -1,0 +1,222 @@
+<div>
+        <header id="header">
+          <div className="header-container">
+            <figure>
+              <div className="Fundo_Icone">
+                <img
+                  src="/images/Icone_Cecilia_Digital.png"
+                  alt="Icone cecilia digital"
+                  id="Icone_Site"
+                />
+              </div>
+            </figure>
+            <h1 className="logo">Cecília Digital</h1>
+            <nav className="navbar">
+              <ul className="nav-menu">
+                <li>
+                  <a href="https://cecilia.digital">Pagina inicial</a>
+                </li>
+                <li>
+                  <a href="#blog">Blog</a>
+                </li>
+              </ul>
+            </nav>
+            <div className="fale_conosco">Fale Conosco →</div>
+          </div>
+        </header>
+        {/* Menu visual para celular */}
+        <div className="menu-mobile">
+          <div className="menu-blog">
+            Blog <span className="seta">▼</span>
+          </div>
+          <div className="menu-subitem">Mais recentes</div>
+        </div>
+        <div id="nav-container">
+          <nav className="navbar">
+            <ul className="nav-menu2">
+              <li>
+                <a href="#Blog">Blog</a>
+              </li>
+              <li>
+                <a href="/migracao_web">Migração</a>
+              </li>
+              <li>
+                <a href="/conteudo_web">Integração</a>
+              </li>
+              <li>
+                <a href="#mais-recentes">Mais recentes</a>
+              </li>
+              <li></li>
+              <li>
+                <a href="#mais" id="abrir-gaveta">
+                  Mais
+                </a>
+                {/* Gaveta suspensa abaixo de "Mais" */}
+                <div id="gaveta" className="gaveta-vertical">
+                  <ul className="gaveta-grid">
+                    <li className="gaveta-row">
+                      <span className="col-esq">Split de Pagamento</span>
+                      <span className="col-dir">Pagamento Super Flexível</span>
+                    </li>
+                    <li className="gaveta-row">
+                      <span className="col-esq">Split de Gateway</span>
+                      <span className="col-dir">Sincronização Automática</span>
+                    </li>
+                    <li className="gaveta-row">
+                      <span className="col-esq">Split Multi-Regional</span>
+                      <span className="col-dir">
+                        Regra de negócio personalizadas
+                      </span>
+                    </li>
+                    <li className="gaveta-row">
+                      <span className="col-esq">Split Geográfico</span>
+                      <span className="col-dir">
+                        Controle de estoque por região
+                      </span>
+                    </li>
+                    <li className="gaveta-row">
+                      <span className="col-esq">E-commerce</span>
+                      <span className="col-dir">Process Automatic</span>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <section id="cards-grid">
+          <article className="card card-hero">
+            <img
+              src="/images/Migração de sistema.png"
+              alt="Migração de sistema"
+              className="card-img"
+            />
+            <div className="overlay">
+              <span className="kicker">Migração de Sistema</span>
+              <h2 className="card-title">Migração de sistema</h2>
+              <p className="card-excerpt">
+                Instantly know your cash position across all accounts.
+              </p>
+              <h4 className="card-author">De Cecilia Digital</h4>
+            </div>
+          </article>
+          <div className="right-column">
+            <article className="card card-small">
+              <img
+                src="/images/Integração de sistema.png"
+                alt="Integração de sistema"
+                className="card-img"
+              />
+              <div className="overlay small">
+                <span className="kicker">Integração de Sistema</span>
+                <h2 className="card-title">Integração de sistema</h2>
+                <p className="card-excerpt">
+                  Instantly know your cash position across all accounts.
+                </p>
+              </div>
+            </article>
+            <aside className="cta-box">
+              <p>Faça agora uma avaliação do seu e‑commerce, gratuita!</p>
+              <a href="#contato" className="btn">
+                Fale Conosco →
+              </a>
+            </aside>
+          </div>
+        </section>
+        {/* Conheça seu parceiro */}
+        <section id="features-section">
+          <h2 className="conheca-seu-parceiro">Conheça seu parceiro</h2>
+          <section className="features-grid">
+            {/* Card 1: Gateway de Pagamento */}
+            <article className="feature gateway">
+              <div className="feature-box">
+                <img
+                  className="ftr-box-img1"
+                  src="/images/fitness first.png"
+                  alt="Transação Fitness First"
+                />
+                <img
+                  className="ftr-box-img2"
+                  src="/images/income.png"
+                  alt="Entrada de receita"
+                />
+              </div>
+              <div className="feature-description">
+                <h3>Gateway de Pagamento</h3>
+                <p>Instantly know your cash position across all accounts.</p>
+              </div>
+            </article>
+            {/* Card 2: E-commerce Automatizado */}
+            <article className="feature e-commerce">
+              <div className="feature-box feature-box--three">
+                <img
+                  className="ftr-box-img3"
+                  src="/images/cd2a10874132b31fd3ed6d9b87d06aa5305fa41e (3).png"
+                  alt="Potato Corner"
+                />
+              </div>
+              <div className="feature-description">
+                <h3>E-commerce Automatizado</h3>
+                <p>
+                  Drill down to the transaction level, with every detail at
+                  fingertips.
+                </p>
+              </div>
+            </article>
+            {/* Card 3: Regras Personalizadas */}
+            <article className="feature regras">
+              <div className="feature-box">
+                <img
+                  src="/images/cd2a10874132b31fd3ed6d9b87d06aa5305fa41e (1).png"
+                  alt="Spending Plan gráfico"
+                />
+              </div>
+              <div className="feature-description">
+                <h3>Regras Personalizadas</h3>
+                <p>
+                  Automatically put your idle cash to work and make the most of
+                  every dollar.
+                </p>
+              </div>
+            </article>
+          </section>
+        </section>
+      </div>
+
+
+
+
+
+
+
+
+
+<section id="recent-info">
+          <h2>Mais Recentes →</h2>
+          <div className="conjunto-titulos">
+            <div className="titulo-chamar-atencao">
+              <div className="black-bar" />
+              <h3>
+                Titulo que vai chamar atenção <br />
+                das pessoas
+              </h3>
+              <h4>25 de novembro de 2025</h4>
+            </div>
+            <div className="titulo-chamar-atencao">
+              <div className="black-bar" />
+              <h3>
+                Titulo que vai chamar atenção <br />
+                das pessoas
+              </h3>
+              <h4>25 de novembro de 2025</h4>
+            </div>
+            <div className="titulo-chamar-atencao">
+              <div className="black-bar" />
+              <h3>
+                Titulo que vai chamar atenção <br />
+                das pessoas
+              </h3>
+              <h4>25 de novembro de 2025</h4>
+            </div>
+          </div>
+        </section>

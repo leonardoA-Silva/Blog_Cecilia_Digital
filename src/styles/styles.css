@@ -6,12 +6,7 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Inter", sans-serif;
-  line-height: 1.6;
-  color: #333;
-  overflow-x: hidden;
-}
+
 
 /* ===== Header ===== */
 #header {
@@ -321,7 +316,6 @@ figure img {
 }
 
 .feature-box img {
-  width: 100%;
   max-width: 400px; /* ou o tamanho desejado */
   height: auto;
   object-fit: cover;
@@ -332,12 +326,12 @@ figure img {
 
 .ftr-box-img1 {
   transform: translate(50%);
-  width: 100px;
+  width: 250px;
 }
 
 .ftr-box-img2 {
   transform: translate(-30%);
-  width: 100px;
+  width: 250px;
 }
 
 .ftr-box-img3 {
@@ -351,7 +345,7 @@ figure img {
 }
 
 .feature.gateway {
-  transform: translate(0%, -12%);
+  transform: translate(0%, 3%);
 }
 
 .feature-description {
@@ -456,14 +450,16 @@ figure img {
   display: flex;
   padding: 1rem 1.25rem; /* 16px 20px */
   font-size: 1rem; /* 16px */
-  border: 0.0625rem solid #ccc; /* 1px */
+  border: 0.1rem solid #CCCCCC; /* 1px */
   border-radius: 1.875rem; /* 30px */
   outline: none;
   width: 18.75rem; /* 300px */
+  background-color: #FFF;
+  color: #000;
 }
 
 #register .form-register input[type="email"]::placeholder {
-  color: #888;
+  color: #000000;
 }
 
 #register .form-register button {
@@ -1465,7 +1461,7 @@ figure img {
 
   #contact {
     width: 100vw;
-    transform: translate(-3.4%);
+    transform: translate(-3.9%);
   }
 
   .carrossel-container .carrossel-card:nth-child(1),
@@ -1531,6 +1527,15 @@ figure img {
     width: 80vw; /* ocupa 80% da tela no celular */
     max-width: 300px;
     margin-right: 20px;
+  }
+
+  .ftr-box-img1{
+    max-width: 100px;
+    transform: translate(15%);
+  }
+
+  .ftr-box-img2{
+    transform: translate(-10%);
   }
 }
 

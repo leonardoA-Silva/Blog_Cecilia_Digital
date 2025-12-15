@@ -1,100 +1,74 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./Carrossel.css";
+import { useRef, useState, useEffect } from "react";
 
-const Carrossel: React.FC = () => {
-  const trackRef = useRef<HTMLDivElement | null>(null);
+interface CarrosselProps {
+  cardClass: string; // ".carrossel-card" ou ".carrossel-card2"
+  children: React.ReactNode;
+}
+
+const Carrossel: React.FC<CarrosselProps> = ({ cardClass, children }) => {
+  const trackRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardWidth, setCardWidth] = useState(0);
 
+  // calcula largura do card
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const length = track.children.length;
-
-    for (let i = 0; i < length; i++) {
-      const clone = track.children[i].cloneNode(true) as HTMLElement;
-      track.appendChild(clone);
+    if (trackRef.current) {
+      const firstCard = trackRef.current.querySelector(cardClass) as HTMLElement;
+      if (firstCard) {
+        setCardWidth(firstCard.offsetWidth + 20); // largura + gap
+      }
     }
-  }, []);
+  }, [cardClass]);
 
-  const scrollToCard = (index: number) => {
+  const move = (direction: number) => {
+    if (!trackRef.current) return;
+    const newIndex = currentIndex + direction;
     const track = trackRef.current;
-    if (!track) return;
 
-    const cardWidth = track.children[0].clientWidth + 32; // width + gap
-    const scrollAmount = index * cardWidth;
-    track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    setCurrentIndex(index);
-  };
+    track.style.transition = "transform 0.4s ease";
+    track.style.transform = `translateX(-${cardWidth * newIndex}px)`;
 
-  const nextCard = () => {
-    const track = trackRef.current;
-    if (!track) return;
+    track.addEventListener(
+      "transitionend",
+      () => {
+        const half = track.children.length / 2;
+        let finalIndex = newIndex;
 
-    const totalCards = track.children.length / 2; // since we duplicated
-    const nextIndex = (currentIndex + 1) % totalCards;
-    scrollToCard(nextIndex);
-  };
+        if (newIndex >= half) {
+          track.style.transition = "none";
+          finalIndex = 0;
+          track.style.transform = `translateX(0px)`;
+          requestAnimationFrame(() => {
+            track.style.transition = "transform 0.4s ease";
+          });
+        }
 
-  const prevCard = () => {
-    const track = trackRef.current;
-    if (!track) return;
+        if (newIndex < 0) {
+          track.style.transition = "none";
+          finalIndex = half - 1;
+          track.style.transform = `translateX(-${cardWidth * finalIndex}px)`;
+          requestAnimationFrame(() => {
+            track.style.transition = "transform 0.4s ease";
+          });
+        }
 
-    const totalCards = track.children.length / 2;
-    const prevIndex = currentIndex === 0 ? totalCards - 1 : currentIndex - 1;
-    scrollToCard(prevIndex);
+        setCurrentIndex(finalIndex);
+      },
+      { once: true }
+    );
   };
 
   return (
-    <section id="carrossel">
-      <h1>Dicas para e-commerce →</h1>
-
+    <div className="carrossel-controls">
+      <button className="seta esquerda" onClick={() => move(-1)}>◀</button>
       <div className="carrossel-wrapper">
-        <button className="carrossel-arrow carrossel-arrow-prev" onClick={prevCard}>
-          ‹
-        </button>
-
-        {/* 4) Associar a ref ao contêiner que vai rolar */}
         <div className="carrossel-container" ref={trackRef}>
-        <div className="carrossel-card">
-          <div className="carrossel-img">
-            <img src="/images/abstract-shape.png" alt="Forma abstrata" />
-          </div>
-          <div className="carrossel-description">
-            <p>Migração de Sistema</p>
-            <h3>Bill & payments</h3>
-            <p>Instantly know your cash position across all accounts</p>
-          </div>
+          {children}
+          {children} {/* duplicação para efeito infinito */}
         </div>
-
-        <div className="carrossel-card">
-          <div className="carrossel-img">
-            <img src="/images/Abstract Background.jpg" alt="Fundo abstrato" />
-          </div>
-          <div className="carrossel-description">
-            <p>Migração de Sistema</p>
-            <h3>Bill & payments</h3>
-            <p>Instantly know your cash position across all accounts</p>
-          </div>
-        </div>
-
-        <div className="carrossel-card">
-          <div className="carrossel-img">
-            <img src="/images/scrap color.jpg" alt="Texturas coloridas" />
-          </div>
-          <div className="carrossel-description">
-            <p>Migração de Sistema</p>
-            <h3>Bill & payments</h3>
-            <p>Instantly know your cash position across all accounts</p>
-          </div>
-        </div>
-        </div>
-
-        <button className="carrossel-arrow carrossel-arrow-next" onClick={nextCard}>
-          ›
-        </button>
       </div>
-    </section>
+      <button className="seta direita" onClick={() => move(1)}>▶</button>
+    </div>
   );
 };
 
